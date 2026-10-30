@@ -1,0 +1,13 @@
+name: call-private-reusable
+on:
+  workflow_dispatch:
+
+jobs:
+  call:
+    uses: Adobe-Enterprise-Docs/workflows/.github/workflows/validate-articles.yml@main
+    with:
+      debug: true
+  control:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo control-job-ran
